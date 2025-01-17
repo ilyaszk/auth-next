@@ -6,6 +6,7 @@ import Navbar from '@/app/components/navbar';
 import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
+import FooterSite from './components/footer-site';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 export const metadata: Metadata = {
@@ -22,10 +23,11 @@ export default async function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body
-          className={`antialiased ${montserrat.className} bg-primary text-secondary`}
+          className={`antialiased ${montserrat.className} bg-background text-secondary`}
         >
           <Navbar />
           {children}
+          <FooterSite />
         </body>
       </html>
     </ClerkProvider>

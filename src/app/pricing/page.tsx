@@ -1,9 +1,19 @@
+'use client';
+import CompareTableSection from './compare-table-section';
+import FaqSection from './faq-section';
+import PlanSection from './plan-section';
+
 export default function Pricing() {
   return (
-    <main className='flex min-h-screen w-full items-center justify-between'>
-      <div className='mx-auto'>
-        <h1>Pricing</h1>
-      </div>
+    <main>
+      {/* Header Section */}
+      <PlanSection />
+
+      {/* Comparison Table */}
+      <CompareTableSection />
+
+      {/* FAQ Section */}
+      <FaqSection />
     </main>
   );
 }
