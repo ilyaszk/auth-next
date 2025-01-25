@@ -1,4 +1,6 @@
-export default function CompareTablSection() {
+import { Check, X } from 'lucide-react';
+
+export default function CompareTableSection() {
   const pricingData = {
     headers: ['Features', 'Starter', 'Basic', 'Intermediate', 'Professional'],
     rows: [
@@ -7,7 +9,7 @@ export default function CompareTablSection() {
         feature: 'Support',
         values: ['Basic', 'Priority', 'Dedicated', 'Dedicated'],
       },
-      { feature: 'Analytics', values: ['❌', '✔️', '✔️', '✔️'] },
+      { feature: 'Analytics', values: [false, true, true, true] },
       {
         feature: 'Collaboration',
         values: ['Community', 'Community', 'Team', 'Team'],
@@ -18,61 +20,83 @@ export default function CompareTablSection() {
       },
     ],
     benefits: [
-      { feature: 'Community Access', values: ['✔️', '✔️', '✔️', '✔️'] },
+      { feature: 'Community Access', values: [true, true, true, true] },
       {
         feature: 'Access to mobile app and web platform',
-        values: ['✔️', '✔️', '✔️', '✔️'],
+        values: [true, true, true, true],
       },
-      { feature: 'Advanced Analytics', values: ['❌', '❌', '✔️', '✔️'] },
-      { feature: 'Dedicated Support', values: ['❌', '❌', '✔️', '✔️'] },
-      { feature: 'Custom Solutions', values: ['❌', '❌', '❌', '✔️'] },
-      { feature: '24/7 Support', values: ['❌', '❌', '❌', '✔️'] },
+      { feature: 'Advanced Analytics', values: [false, false, true, true] },
+      { feature: 'Dedicated Support', values: [false, false, true, true] },
+      { feature: 'Custom Solutions', values: [false, false, false, true] },
+      { feature: '24/7 Support', values: [false, false, false, true] },
     ],
   };
+
+  const renderValue = (value: boolean | string) => {
+    if (typeof value === 'boolean') {
+      return value ? (
+        <Check className='mx-auto h-5 w-5 text-green-500' />
+      ) : (
+        <X className='mx-auto h-5 w-5 text-red-500' />
+      );
+    }
+    return value;
+  };
+
   return (
-    <section className='mx-auto max-w-6xl px-4 py-10'>
+    <section className='mx-auto max-w-6xl px-4 py-20'>
       <h2 className='text-center text-3xl font-bold'>Compare Our Plans</h2>
-      <div className='mt-8 overflow-x-auto'>
-        <table className='w-full border-collapse border border-gray-300'>
+      <div className='mt-12 overflow-x-auto'>
+        <table className='w-full border-separate border-spacing-0 rounded-lg'>
           <thead>
-            <tr className='bg-gray-100'>
+            <tr>
               {pricingData.headers.map((header, index) => (
-                <th key={index} className='p-4 text-center'>
+                <th
+                  key={index}
+                  className={`sticky top-0 bg-gray-900 p-4 text-left text-sm font-medium text-white ${index === 0 ? 'rounded-tl-lg' : ''} ${index === pricingData.headers.length - 1 ? 'rounded-tr-lg' : ''} `}
+                >
                   {header}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {/* Regular rows */}
             {pricingData.rows.map((row, rowIndex) => (
               <tr key={rowIndex}>
-                <td className='border p-4'>{row.feature}</td>
+                <td className='border-b border-gray-200 bg-white p-4 font-medium'>
+                  {row.feature}
+                </td>
                 {row.values.map((value, valueIndex) => (
-                  <td key={valueIndex} className='p-4 text-center'>
-                    {value}
+                  <td
+                    key={valueIndex}
+                    className='border-b border-gray-200 bg-white p-4 text-center'
+                  >
+                    {renderValue(value)}
                   </td>
                 ))}
               </tr>
             ))}
 
-            {/* Separator for benefits */}
-            <tr className='bg-gray-100'>
-              <th
-                className='p-4 text-left'
+            <tr>
+              <td
                 colSpan={pricingData.headers.length}
+                className='bg-gray-900 p-4 text-left text-sm font-medium text-white'
               >
                 Benefits
-              </th>
+              </td>
             </tr>
 
-            {/* Benefits rows */}
             {pricingData.benefits.map((benefit, benefitIndex) => (
               <tr key={benefitIndex}>
-                <td className='border p-4'>{benefit.feature}</td>
+                <td className='border-b border-gray-200 bg-white p-4 font-medium'>
+                  {benefit.feature}
+                </td>
                 {benefit.values.map((value, valueIndex) => (
-                  <td key={valueIndex} className='p-4 text-center'>
-                    {value}
+                  <td
+                    key={valueIndex}
+                    className='border-b border-gray-200 bg-white p-4 text-center'
+                  >
+                    {renderValue(value)}
                   </td>
                 ))}
               </tr>
