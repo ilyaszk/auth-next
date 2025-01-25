@@ -16,8 +16,8 @@ export default function Product() {
               </h1>
               <p className='mt-6 text-lg text-purple-100'>
                 Une plateforme unifiée pour gérer, analyser et optimiser tous
-                vos processus d'entreprise. Gagnez en efficacité dès
-                aujourd'hui.
+                vos processus d&apos;entreprise. Gagnez en efficacité dès
+                aujourd&apos;hui.
               </p>
 
               <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
@@ -31,14 +31,14 @@ export default function Product() {
                   href='/contact'
                   className='inline-flex items-center justify-center gap-2 rounded-lg border border-purple-400/30 px-6 py-3 text-white hover:bg-white/5'
                 >
-                  Contacter l'équipe
+                  Contacter l&apos;équipe
                 </Link>
               </div>
 
               <div className='mt-12 flex items-center gap-8 text-purple-200'>
                 <div className='flex items-center gap-2'>
                   <CheckCircle className='h-5 w-5 text-purple-400' />
-                  <span>14 jours d'essai</span>
+                  <span>14 jours d&apos;essai</span>
                 </div>
                 <div className='flex items-center gap-2'>
                   <CheckCircle className='h-5 w-5 text-purple-400' />
@@ -86,8 +86,8 @@ export default function Product() {
           <div className='text-center'>
             <h2 className='text-3xl font-bold'>Une plateforme complète</h2>
             <p className='mx-auto mt-4 max-w-2xl text-gray-600'>
-              Découvrez comment notre solution s'adapte à vos besoins avec des
-              fonctionnalités pensées pour votre productivité.
+              Découvrez comment notre solution s&apos;adapte à vos besoins avec
+              des fonctionnalités pensées pour votre productivité.
             </p>
           </div>
 
@@ -410,8 +410,8 @@ export default function Product() {
                 </div>
                 <blockquote className='mt-8 border-l-2 border-blue-500 pl-4'>
                   <p className='text-sm italic text-gray-400'>
-                    "Un gain de productivité significatif pour nos équipes
-                    comptables."
+                    &quot;Un gain de productivité significatif pour nos équipes
+                    comptables.&quot;
                   </p>
                   <footer className='mt-2 text-sm text-gray-500'>
                     - CFO, Entreprise CAC 40
@@ -460,8 +460,8 @@ export default function Product() {
                 </div>
                 <blockquote className='mt-8 border-l-2 border-purple-500 pl-4'>
                   <p className='text-sm italic text-gray-400'>
-                    "La plateforme a révolutionné notre façon de développer et
-                    déployer."
+                    &quot;La plateforme a révolutionné notre façon de développer
+                    et déployer.&quot;
                   </p>
                   <footer className='mt-2 text-sm text-gray-500'>
                     - CTO, Scale-up Tech
@@ -510,8 +510,8 @@ export default function Product() {
                 </div>
                 <blockquote className='mt-8 border-l-2 border-green-500 pl-4'>
                   <p className='text-sm italic text-gray-400'>
-                    "Une transformation digitale réussie de notre réseau de
-                    distribution."
+                    &quot;Une transformation digitale réussie de notre réseau de
+                    distribution.&quot;
                   </p>
                   <footer className='mt-2 text-sm text-gray-500'>
                     - Directeur Digital, Retail
@@ -702,8 +702,8 @@ export default function Product() {
               <div className='flex items-center gap-4'>
                 <div>
                   <blockquote className='text-lg text-white'>
-                    "Une solution indispensable qui a transformé notre façon de
-                    travailler."
+                    &quot;Une solution indispensable qui a transformé notre
+                    façon de travailler.&quot;
                   </blockquote>
                   <div className='mt-2 text-sm text-purple-200'>
                     Marc Dupont, CEO @ TechCorp
