@@ -156,12 +156,13 @@ export default function About() {
           <div className='grid gap-12 md:grid-cols-2 md:items-center'>
             <div>
               <h2 className='text-3xl font-bold md:text-4xl'>
-                Rejoignez l'Aventure
+                Rejoignez l&apos;Aventure
               </h2>
               <p className='mt-6 text-lg text-purple-100'>
-                Nous recherchons des talents passionnés pour façonner l'avenir
-                de la collaboration numérique. Découvrez nos opportunités et
-                développez votre potentiel dans un environnement innovant.
+                Nous recherchons des talents passionnés pour façonner
+                l&apos;avenir de la collaboration numérique. Découvrez nos
+                opportunités et développez votre potentiel dans un environnement
+                innovant.
               </p>
               <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
                 <a
