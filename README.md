@@ -1,5 +1,7 @@
 ## Auth with Next.js
 
+https://auth-next-azure.vercel.app/
+
 This is a simple project to demonstrate how to make passwordless authentication with Next.js.
 
 First, run the development server:
