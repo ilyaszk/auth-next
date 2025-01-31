@@ -5,8 +5,8 @@ on:
     branches: [master] # s'exécute sur les PR vers master
 
 jobs:
-  lint:
-    name: Lint
+  build-test-lint:
+    name: Build, Test & Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -23,3 +23,9 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run tests
+        run: npm run test
