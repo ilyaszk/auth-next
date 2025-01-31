@@ -36,9 +36,3 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Build artifact # C'est plutot pratique ça permet de stocker les fichiers de build pour les utiliser dans un autre job
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-files
-          path: .next
