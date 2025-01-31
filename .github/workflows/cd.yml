@@ -10,6 +10,7 @@ env:
   NEXT_PUBLIC_CLERK_SIGN_UP_URL: ${{ secrets.NEXT_PUBLIC_CLERK_SIGN_UP_URL }}
   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: ${{ secrets.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL }}
   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: ${{ secrets.NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL }}
+  DOCKER_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/auth-next
 
 jobs:
   ci:
@@ -55,5 +56,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/auth-next:latest
-            ${{ secrets.CI_CD_ESGI_PROJET }}/auth-next:${{ github.sha }}
+            ${{ env.DOCKER_IMAGE }}/auth-next:latest
+            ${{ env.DOCKER_IMAGE }}/auth-next:${{ github.sha }}
