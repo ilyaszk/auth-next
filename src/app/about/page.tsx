@@ -166,7 +166,7 @@ export default function About() {
               </p>
               <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
                 <a
-                  href='/careers"
+                  href='/careers'
                   className='inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-purple-900 transition-colors hover:bg-purple-100'
                 >
                   Voir les Postes
