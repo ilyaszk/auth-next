@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: [master] # s'exécute sur les PR vers master
+    branches: [master]
 
 jobs:
   build-test-lint:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
-      CLERK_SECRET_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+      CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
       NEXT_PUBLIC_CLERK_SIGN_IN_URL: ${{ secrets.NEXT_PUBLIC_CLERK_SIGN_IN_URL }}
       NEXT_PUBLIC_CLERK_SIGN_UP_URL: ${{ secrets.NEXT_PUBLIC_CLERK_SIGN_UP_URL }}
       NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: ${{ secrets.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL }}
@@ -31,8 +31,14 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
+      - name: Run tests
+        run: npm run test
+
       - name: Build project
         run: npm run build
 
-      - name: Run tests
-        run: npm run test
+      - name: Build artifact # C'est plutot pratique ça permet de stocker les fichiers de build pour les utiliser dans un autre job
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-files
+          path: .next
