@@ -84,8 +84,15 @@ docker rm auth-next
 3. Lancer le nouveau conteneur :
 
 ```bash
-## Remplacer les variables d'environnement par les valeurs adéquates dans le fichier .env
-docker run -d --name auth-next -p 3000:3000 --env-file .env ilyaszk/auth-next:latest
+## Remplacer les variables d'environnement par les valeurs adéquates
+docker run -d --name auth-next -p 3000:3000
+-e NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key
+-e NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+-e NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+-e NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+-e NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+-e CLERK_SECRET_KEY=your_secret_key
+ilyaszk/auth-next:latest
 ```
 
 4. Vérifier que l'application fonctionne :
