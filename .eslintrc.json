@@ -1,0 +1,8 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // Ajoutez vos règles personnalisées ici
+    "no-unused-vars": "error",
+    "no-console": "warn"
+  }
+}
