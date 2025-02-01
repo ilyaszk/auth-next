@@ -10,7 +10,7 @@ export default async function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`flex min-h-screen ${montserrat.className} bg-white`}>
+    <body className={`flex min-h-screen ${montserrat.className} bg-white`}>
       {/* Left Side - Brand/Marketing */}
       <div className='relative hidden w-1/2 bg-gradient-to-br from-gray-900 to-purple-900 lg:block'>
         <div className='relative z-10 flex h-full flex-col justify-between p-12'>
@@ -52,6 +52,6 @@ export default async function AuthLayout({
       <main className='flex w-full flex-col justify-center px-4 py-12 sm:px-6 lg:w-1/2 lg:px-20 xl:px-24'>
         {children}
       </main>
-    </div>
+    </body>
   );
 }
