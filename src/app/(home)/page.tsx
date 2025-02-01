@@ -1,10 +1,10 @@
-import CtaSection from './cta-section';
-import FeaturesSection from './features-section';
-import HeroSection from './hero-section';
+import CtaSection from './cta-section-home';
+import FeaturesSection from './features-section-home';
+import HeroSection from './hero-section-home';
 
 export default function HomePage() {
   return (
-    <main className='flex min-h-screen flex-col'>
+    <main>
       <HeroSection />
       <FeaturesSection />
       <CtaSection />
