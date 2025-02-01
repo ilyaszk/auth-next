@@ -13,42 +13,42 @@ export default function About() {
       icon: <Target className='h-6 w-6 text-purple-600' />,
       title: 'Excellence',
       description:
-        "Nous visons l'excellence dans chaque aspect de notre service pour garantir votre réussite.",
+        'We strive for excellence in every aspect of our service to ensure your success.',
     },
     {
       icon: <Users className='h-6 w-6 text-purple-600' />,
-      title: 'Innovation Continue',
+      title: 'Continuous Innovation',
       description:
-        'Nous développons constamment de nouvelles solutions pour anticiper vos besoins.',
+        'We constantly develop new solutions to anticipate your needs.',
     },
     {
       icon: <Code className='h-6 w-6 text-purple-600' />,
-      title: 'Engagement Client',
+      title: 'Customer Commitment',
       description:
-        'Votre satisfaction est notre priorité absolue, avec un support dédié 24/7.',
+        'Your satisfaction is our absolute priority, with 24/7 dedicated support.',
     },
   ];
 
   const timeline = [
     {
       year: '2020',
-      title: 'Notre Création',
-      description: 'Lancement avec une vision innovante.',
+      title: 'Our Creation',
+      description: 'Launch with an innovative vision.',
     },
     {
       year: '2021',
-      title: 'Levée de Fonds',
-      description: '10M€ pour accélérer notre développement.',
+      title: 'Fundraising',
+      description: '€10M to accelerate our development.',
     },
     {
       year: '2022',
-      title: 'Expansion Internationale',
-      description: 'Ouverture de bureaux à Londres et Singapour.',
+      title: 'International Expansion',
+      description: 'Opening offices in London and Singapore.',
     },
     {
       year: '2023',
-      title: 'Version Entreprise',
-      description: 'Nouvelles fonctionnalités de sécurité avancées.',
+      title: 'Enterprise Version',
+      description: 'New advanced security features.',
     },
   ];
 
@@ -60,12 +60,11 @@ export default function About() {
           <div className='relative z-10 grid gap-12 md:grid-cols-2'>
             <div className='text-white'>
               <h1 className='text-4xl font-bold md:text-5xl lg:text-6xl'>
-                Solution innovante pour votre entreprise
+                Innovative Solution for Your Business
               </h1>
               <p className='mt-6 text-lg text-purple-100'>
-                Transformez votre façon de travailler avec notre plateforme
-                intelligente, conçue pour optimiser vos processus et stimuler la
-                croissance.
+                Transform your way of working with our intelligent platform,
+                designed to optimize your processes and drive growth.
               </p>
             </div>
             <div className='grid grid-cols-2 gap-4'>
@@ -91,7 +90,7 @@ export default function About() {
       {/* Vision Section */}
       <section className='py-20'>
         <div className='mx-auto max-w-6xl px-4'>
-          <h2 className='text-center text-3xl font-bold'>Notre Vision</h2>
+          <h2 className='text-center text-3xl font-bold'>Our Vision</h2>
           <div className='mt-12 grid gap-8 md:grid-cols-3'>
             {values.map((value, index) => (
               <div
@@ -107,9 +106,11 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Timeline Section */}
       <section className='bg-gray-50 py-20'>
         <div className='mx-auto max-w-6xl px-4'>
-          <h2 className='text-center text-3xl font-bold'>Notre Histoire</h2>
+          <h2 className='text-center text-3xl font-bold'>Our Story</h2>
           <div className='mt-12'>
             <div className='relative'>
               <div className='absolute left-1/2 h-full w-0.5 -translate-x-1/2 bg-purple-200'></div>
@@ -156,26 +157,26 @@ export default function About() {
           <div className='grid gap-12 md:grid-cols-2 md:items-center'>
             <div>
               <h2 className='text-3xl font-bold md:text-4xl'>
-                Rejoignez l&apos;Aventure
+                Join the Adventure
               </h2>
               <p className='mt-6 text-lg text-purple-100'>
-                Nous recherchons des talents passionnés pour façonner
-                l&apos;avenir de la collaboration numérique. Découvrez nos
-                opportunités et développez votre potentiel dans un environnement
-                innovant.
+                We&apos;re looking for passionate talents to shape the future of
+                digital collaboration. Discover our opportunities and develop
+                your potential in an innovative environment.
               </p>
               <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
                 <a
                   href='/careers'
                   className='inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-purple-900 transition-colors hover:bg-purple-100'
                 >
-                  Voir les Postes
+                  View Positions
                 </a>
+
                 <a
                   href='/culture'
                   className='inline-flex items-center justify-center gap-2 rounded-lg border border-white px-6 py-3 text-white transition-colors hover:bg-white/10'
                 >
-                  Notre Culture
+                  Our Culture
                 </a>
               </div>
 
@@ -200,7 +201,7 @@ export default function About() {
                   <div>
                     <h3 className='font-semibold'>Innovation</h3>
                     <p className='text-sm text-purple-200'>
-                      Technologies de pointe
+                      Cutting-edge technologies
                     </p>
                   </div>
                 </div>
@@ -221,8 +222,10 @@ export default function About() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className='font-semibold'>Rémunération</h3>
-                    <p className='text-sm text-purple-200'>Package attractif</p>
+                    <h3 className='font-semibold'>Compensation</h3>
+                    <p className='text-sm text-purple-200'>
+                      Attractive package
+                    </p>
                   </div>
                 </div>
                 <div className='flex items-start gap-3'>
@@ -244,7 +247,7 @@ export default function About() {
                   <div>
                     <h3 className='font-semibold'>Remote First</h3>
                     <p className='text-sm text-purple-200'>
-                      Flexibilité maximale
+                      Maximum flexibility
                     </p>
                   </div>
                 </div>
@@ -265,9 +268,9 @@ export default function About() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className='font-semibold'>Formation</h3>
+                    <h3 className='font-semibold'>Training</h3>
                     <p className='text-sm text-purple-200'>
-                      Développement continu
+                      Continuous development
                     </p>
                   </div>
                 </div>
@@ -280,21 +283,21 @@ export default function About() {
                 <div className='grid gap-6'>
                   <div className='space-y-2'>
                     <div className='text-sm font-medium text-purple-300'>
-                      Positions Ouvertes
+                      Open Positions
                     </div>
-                    <div className='text-3xl font-bold'>12 Postes</div>
+                    <div className='text-3xl font-bold'>12 Positions</div>
                   </div>
                   <div className='space-y-2'>
                     <div className='text-sm font-medium text-purple-300'>
-                      Équipe Actuelle
+                      Current Team
                     </div>
                     <div className='text-3xl font-bold'>50+ Talents</div>
                   </div>
                   <div className='space-y-2'>
                     <div className='text-sm font-medium text-purple-300'>
-                      Pays
+                      Countries
                     </div>
-                    <div className='text-3xl font-bold'>15+ Pays</div>
+                    <div className='text-3xl font-bold'>15+ Countries</div>
                   </div>
                 </div>
               </div>
