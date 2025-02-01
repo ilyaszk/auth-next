@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
+import Link from 'next/link';
 import Script from 'next/script';
 
 export default function Contact() {
@@ -47,7 +48,7 @@ export default function Contact() {
                 link: '#',
               },
             ].map((item, index) => (
-              <a
+              <Link
                 key={index}
                 href={item.link}
                 className='group relative rounded-2xl bg-white p-8 shadow-xl transition-transform hover:-translate-y-1'
@@ -58,7 +59,7 @@ export default function Contact() {
                 <h3 className='mb-2 text-xl font-semibold'>{item.title}</h3>
                 <p className='mb-4 text-sm text-gray-500'>{item.desc}</p>
                 <p className='font-medium text-gray-900'>{item.contact}</p>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -139,7 +140,7 @@ export default function Contact() {
             id='gmap_canvas'
             src='https://maps.google.com/maps?width=1920&amp;height=382&amp;hl=en&amp;q=Av.%20Gustave%20Eiffel%20Paris+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
           ></iframe>
-          <a href='http://mapswebsite.net/fr'> Google Maps</a>
+          <Link href='http://mapswebsite.net/fr'> Google Maps</Link>
           <Script
             type='text/javascript'
             src='https://embedmaps.com/google-maps-authorization/script.js?id=1687256ab7ca4b10e1dbad7e26eca9463b3fe845'

@@ -1,4 +1,5 @@
 import { Code, Target, Users } from 'lucide-react';
+import Link from 'next/link';
 
 export default function About() {
   const stats = [
@@ -165,19 +166,19 @@ export default function About() {
                 your potential in an innovative environment.
               </p>
               <div className='mt-8 flex flex-col gap-4 sm:flex-row'>
-                <a
+                <Link
                   href='/careers'
                   className='inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-purple-900 transition-colors hover:bg-purple-100'
                 >
                   View Positions
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href='/culture'
                   className='inline-flex items-center justify-center gap-2 rounded-lg border border-white px-6 py-3 text-white transition-colors hover:bg-white/10'
                 >
                   Our Culture
-                </a>
+                </Link>
               </div>
 
               {/* Benefits */}

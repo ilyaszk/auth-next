@@ -1,8 +1,19 @@
-import { Montserrat } from 'next/font/google';
-import Link from 'next/link';
+import { AppSidebar } from '@/components/app-sidebar';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from '@/components/ui/sidebar';
+import { Separator } from '@radix-ui/react-separator';
 import React from 'react';
-
-const montserrat = Montserrat({ subsets: ['latin'] });
 
 export default async function AuthLayout({
   children,
@@ -10,48 +21,32 @@ export default async function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`flex min-h-screen ${montserrat.className} bg-white`}>
-      {/* Left Side - Brand/Marketing */}
-      <div className='relative hidden w-1/2 bg-gradient-to-br from-gray-900 to-purple-900 lg:block'>
-        <div className='relative z-10 flex h-full flex-col justify-between p-12'>
-          <div>
-            <Link className='text-xl font-bold text-white' href='/'>
-              Your SaaS Company
-            </Link>
-          </div>
-          <div className='max-w-lg'>
-            <h1 className='text-4xl font-bold text-white'>
-              Rejoignez une communauté innovante
-            </h1>
-            <p className='mt-4 text-lg text-purple-100'>
-              Une plateforme unique pour transformer votre façon de travailler.
-            </p>
-            <div className='mt-8 grid grid-cols-2 gap-4'>
-              <div className='rounded-lg bg-white/10 p-4 backdrop-blur-sm'>
-                <div className='text-2xl font-bold text-white'>10k+</div>
-                <div className='text-sm text-purple-200'>
-                  Clients satisfaits
-                </div>
-              </div>
-              <div className='rounded-lg bg-white/10 p-4 backdrop-blur-sm'>
-                <div className='text-2xl font-bold text-white'>24/7</div>
-                <div className='text-sm text-purple-200'>Support client</div>
-              </div>
+    <body>
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <header className='flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12'>
+            <div className='flex items-center gap-2 px-4'>
+              <SidebarTrigger className='-ml-1' />
+              <Separator orientation='vertical' className='mr-2 h-4' />
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem className='hidden md:block'>
+                    <BreadcrumbLink href='#'>
+                      Building Your Application
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator className='hidden md:block' />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
             </div>
-          </div>
-          <div className='text-sm text-purple-200'>
-            © 2025 Your SaaS Company. Tous droits réservés.
-          </div>
-        </div>
-        {/* Decorative Background Elements */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className='absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-gray-900'></div>
-      </div>
-
-      {/* Right Side - Auth Form */}
-      <main className='flex w-full flex-col justify-center px-4 py-12 sm:px-6 lg:w-1/2 lg:px-20 xl:px-24'>
-        {children}
-      </main>
-    </div>
+          </header>
+          <main className='h-full w-full p-4'>{children}</main>
+        </SidebarInset>
+      </SidebarProvider>
+    </body>
   );
 }
